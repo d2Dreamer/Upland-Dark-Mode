@@ -7,15 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upland Dark Mode</title>
     <style>
-        button {
-            padding: 10px;
-            margin: 5px;
-            cursor: pointer;
+        body {
+            font-family: Arial, sans-serif;
+            width: 200px;
+        }
+        #logo {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .toggle-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .toggle-label {
+            margin-right: 10px;
+        }
+        .toggle-input {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50px;
+            height: 26px;
+            background: #ddd;
+            outline: none;
+            border-radius: 20px;
+            position: relative;
+        }
+        .toggle-input::before {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #fff;
+            top: 2px;
+            left: 2px;
+            transition: 0.2s;
+        }
+        .toggle-input:checked::before {
+            left: calc(100% - 2px);
+            transform: translateX(-100%);
         }
     </style>
 </head>
 <body>
-    <button id="toggleButton">Toggle Dark Mode</button>
+    <img id="logo" src="icon.png" alt="Upland Dark Mode Logo">
+    <div class="toggle-container">
+        <span class="toggle-label">Dark Mode</span>
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-input"></span>
+        </label>
+    </div>
 
     <script src="popup.js"></script>
 </body>
