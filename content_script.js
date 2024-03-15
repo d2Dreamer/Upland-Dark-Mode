@@ -2,6 +2,48 @@
 
 let darkModeEnabled = false;
 
+// Custom Mapbox style JSON for dark mode
+const darkModeStyleJson = {
+    "version": 8,
+    "name": "Dark Mode",
+    "sources": {
+        "composite": {
+            "type": "vector",
+            "url": "mapbox://mapbox.mapbox-streets-v8,mapbox.mapbox-terrain-v2"
+        }
+    },
+    "sprite": "mapbox://sprites/mapbox/bright-v9",
+    "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "#1e1e1e"
+            }
+        },
+        {
+            "id": "water",
+            "source": "composite",
+            "source-layer": "water",
+            "type": "fill",
+            "paint": {
+                "fill-color": "#001f3f"
+            }
+        },
+        {
+            "id": "road",
+            "source": "composite",
+            "source-layer": "road",
+            "type": "fill",
+            "paint": {
+                "fill-color": "#333",
+                "fill-outline-color": "#fff"
+            }
+        }
+    ]
+};
+
 // Function to apply dark mode styles
 function applyDarkMode() {
     // Add CSS styles for dark mode
