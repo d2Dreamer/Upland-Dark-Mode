@@ -50,24 +50,7 @@ function applyDarkMode() {
     const style = document.createElement('style');
     style.id = 'uplandDarkModeStyle';
     style.textContent = `
-        /* Change map colors for dark mode */
-        .mapboxgl-canvas {
-            filter: grayscale(100%) invert(100%) hue-rotate(180deg);
-        }
-        .mapboxgl-canvas.mapboxgl-interactive {
-            filter: grayscale(100%) invert(100%) hue-rotate(180deg);
-        }
-        .mapboxgl-canvas.mapboxgl-overlay-pane svg path,
-        .mapboxgl-canvas.mapboxgl-overlay-pane svg circle,
-        .mapboxgl-canvas.mapboxgl-overlay-pane svg rect {
-            stroke: #fff !important;
-        }
-        .mapboxgl-canvas.mapboxgl-overlay-pane svg path.mapboxgl-roads {
-            fill: #ff0 !important;
-        }
-        .mapboxgl-canvas.mapboxgl-overlay-pane svg path.mapboxgl-water {
-            fill: #001f3f !important;
-        }
+        /* Add your additional CSS styles for dark mode here */
     `;
     document.head.appendChild(style);
 
